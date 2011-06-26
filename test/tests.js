@@ -46,4 +46,24 @@ $(function() {
         });
     });
 
+    test("Multiple events for single element are disabled and then restored in order.", function() {
+        var foo = '';
+        var $link = $('#single-link');
+        $link.click(function() { foo += 'a' });
+        $link.click(function() { foo += 'b' });
+        $link.click(function() { foo += 'c' });
+
+        $link.disableEvents();
+        $link.click();
+        equal(foo, '', 'Click events are disabled.');
+
+        $link.click(function() { foo += 'd' });
+        $link.click();
+        equal(foo, 'd', 'Only the new click event should fire.');
+
+        $link.restoreEvents();
+        $link.click();
+        equal(foo, 'dabc', 'Original click events fired correctly and in order. Restored events replace interim event.');
+    });
+
 });
