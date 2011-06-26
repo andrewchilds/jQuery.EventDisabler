@@ -29,7 +29,7 @@ $(function() {
 
         $elements.restoreEvents();
         $elements.click();
-        equal(foo, 6, 'foo should now be 6 since we called restoreEvents again, which had no effect.');
+        equal(foo, 6, 'foo should now be 6 after a second round of click events. We also called restoreEvents which had no effect.');
     });
 
     test("Elements without IDs now have unique IDs after calling disableEvents on them", function() {
@@ -37,12 +37,12 @@ $(function() {
 
         $elements.each(function() {
             var id = $(this).attr('id');
-            equals(id, '', 'This element has no id.');
+            equal(id, '', 'This element has no id.');
+
             $(this).disableEvents();
             id = $(this).attr('id');
-            equals(id.match(/^event_disabler_/).length, 1, 'This element has an id now.');
-            console.log(id);
-            equals($('#' + id).length, 1, 'This is a unique id.')
+            equal(id.match(/^event_disabler_/).length, 1, 'This element has an id now.');
+            equal($('#' + id).length, 1, 'This is a unique id.')
         });
     });
 
