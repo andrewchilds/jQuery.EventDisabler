@@ -1,6 +1,6 @@
 # jQuery Event Disabler
 
-A simple jQuery plugin for disabling and restoring bound events. This plugin adds two jQuery methods, *disableEvents* and *restoreEvents*.
+A simple jQuery plugin for disabling and restoring bound events. This plugin adds two jQuery methods, **disableEvents** and **restoreEvents**.
 
 ## Example Usage:
 
@@ -20,7 +20,7 @@ A simple jQuery plugin for disabling and restoring bound events. This plugin add
 
 ## Compatibility
 
-Unit tested to work with jQuery 1.2.6 through 1.5.2. *Not yet working with 1.6.x.*
+Unit tested to work with jQuery 1.2.6 through 1.5.2. **Not yet working with 1.6.x.**
 
 ## Fine Print
 
